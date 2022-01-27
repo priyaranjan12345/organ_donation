@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "948457494438",
+    "project_id": "organ-donation-4c4c6",
+    "storage_bucket": "organ-donation-4c4c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948457494438:android:717d3f49a7cfce36b76167",
+        "android_client_info": {
+          "package_name": "app.com.od.organ_donation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948457494438-dk5gl8u8l8aaqju1gh6femkftfqah9s5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.com.od.organ_donation",
+            "certificate_hash": "b76e7e322afb3f12e686afe3c0a33978f2e8c41c"
+          }
+        },
+        {
+          "client_id": "948457494438-da90ul4r7hfe9skrmo9f83cmpcd80ok9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3rHSo2_RzvSbUzpSZj_pRT5XdQ1jDzu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948457494438-da90ul4r7hfe9skrmo9f83cmpcd80ok9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
