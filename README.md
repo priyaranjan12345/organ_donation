@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+User can login using phone number and google account
+
+for phone auth you need to generate and add sha256 to firebae
+inside android folder of flutter project open cmd and type ./gradlew SigninReport to generate sha256 and sha1
