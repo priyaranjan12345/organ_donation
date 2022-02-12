@@ -3,24 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class AppDialog {
-  static void showLoadingDialog() {
-    Get.dialog(
-      Dialog(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: const [
-              CircularProgressIndicator(),
-              SizedBox(height: 8),
-              Text('Loading...'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
   static showExitgDialog() {
     return showDialog<void>(
       context: Get.context!,
@@ -46,11 +28,5 @@ class AppDialog {
         );
       },
     );
-  }
-
-  static void hideLoadingDialog() {
-    if (Get.isDialogOpen!) {
-      Get.back();
-    }
   }
 }

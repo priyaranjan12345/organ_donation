@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:organ_donation/modules/controller/login_screen_controller.dart';
+import 'package:organ_donation/modules/controller/login_controller/login_screen_controller.dart';
 
 class LoginBindings extends Bindings {
   @override

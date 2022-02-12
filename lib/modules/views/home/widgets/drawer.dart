@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'dart:developer';
 
-import '../../../data/firebase/auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:getxfire/getxfire.dart';
+
+import '../../../../core/theme/app_colors.dart';
 import '../../../routes/app_routes.dart';
-import '../../../theme/app_colors.dart';
 
 class AppDrawer {
   static Drawer appDrawer() {
@@ -84,8 +85,13 @@ class AppDrawer {
           ListTile(
             title: const Text('SignOut'),
             onTap: () async {
-              await FirebaseAuthentication().fireLogout();
-              Get.offAllNamed(AppRoutes.loginPage);
+              await GetxFire.showProgressHud();
+              try {
+                await GetxFire.signOut(isSocialLogout: true);
+                Get.offAllNamed(AppRoutes.loginPage);
+              } catch (e) {
+                log('logout error : $e');
+              }
             },
           ),
         ],

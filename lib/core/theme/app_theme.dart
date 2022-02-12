@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:organ_donation/theme/app_colors.dart';
+import 'package:organ_donation/core/theme/app_colors.dart';
 
 final _otlinedBorderLight = OutlineInputBorder(
   borderRadius: BorderRadius.circular(10),
@@ -23,34 +23,34 @@ class AppTheme {
       elevation: 1,
       toolbarTextStyle: TextStyle(
         color: AppColors.white,
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: FontWeight.w800,
       ),
       titleTextStyle: TextStyle(
         color: AppColors.white,
-        fontSize: 20,
-        fontWeight: FontWeight.w800,
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
       ),
       iconTheme: IconThemeData(color: AppColors.green),
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: AppColors.veryLightGrey,
-      contentPadding: const EdgeInsets.symmetric(
-        vertical: 16,
-        horizontal: 20.0,
-      ),
-      border: _otlinedBorderLight,
-      enabledBorder: _otlinedBorderLight,
-      focusedBorder: _otlinedBorderLight,
-      hintStyle: const TextStyle(
-        color: AppColors.grey,
-        fontSize: 16,
-      ),
-      labelStyle: const TextStyle(
-        color: AppColors.red,
-      ),
-    ),
+    // inputDecorationTheme: InputDecorationTheme(
+    //   filled: true,
+    //   fillColor: AppColors.veryLightGrey,
+    //   contentPadding: const EdgeInsets.symmetric(
+    //     vertical: 16,
+    //     horizontal: 20.0,
+    //   ),
+    //   border: _otlinedBorderLight,
+    //   enabledBorder: _otlinedBorderLight,
+    //   focusedBorder: _otlinedBorderLight,
+    //   hintStyle: const TextStyle(
+    //     color: AppColors.grey,
+    //     fontSize: 16,
+    //   ),
+    //   labelStyle: const TextStyle(
+    //     color: AppColors.red,
+    //   ),
+    // ),
     iconTheme: const IconThemeData(
       color: AppColors.cyan,
     ),

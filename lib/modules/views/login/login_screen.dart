@@ -3,12 +3,12 @@ import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:get/get.dart';
 
-import '../../core/helper/loading_dialog.dart';
-import '../../core/constants/app_assets_path.dart';
-import '../../core/constants/app_strings.dart';
-import '../../modules/controller/login_screen_controller.dart';
-import '../../routes/app_routes.dart';
-import '../../theme/app_sizes.dart';
+import '../../../core/theme/app_input_decoration.dart';
+import '../../../core/constants/app_assets_path.dart';
+import '../../../core/constants/app_strings.dart';
+import '../../../core/helper/app_dialog.dart';
+import '../../../core/theme/app_sizes.dart';
+import '../../controller/login_controller/login_screen_controller.dart';
 
 class LoginScreen extends GetView<LoginController> {
   const LoginScreen({Key? key}) : super(key: key);
@@ -66,9 +66,9 @@ class LoginScreen extends GetView<LoginController> {
                 TextField(
                   controller: controller.phoneNumberController,
                   keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    prefix: Text(AppStrings.countryCode),
-                    label: Text('Phone Number'),
+                  decoration: CustomInputDecoration.inputDecOne().copyWith(
+                    prefix: const Text(AppStrings.countryCode),
+                    label: const Text('Phone Number'),
                   ),
                 ),
                 const SizedBox(
@@ -76,15 +76,7 @@ class LoginScreen extends GetView<LoginController> {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    bool status = await controller.phoneNumberVerification();
-                    if (status) {
-                      Get.toNamed(
-                        AppRoutes.otpPage,
-                        parameters: {
-                          'phoneNumber': controller.phoneNumberController.text
-                        },
-                      );
-                    } else {}
+                    await controller.phoneNumberVerification();
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(16.0),
@@ -112,10 +104,7 @@ class LoginScreen extends GetView<LoginController> {
                     text: "Google Account",
                     elevation: 6,
                     onPressed: () async {
-                      bool status = await controller.signInWithGoogle();
-                      if (status) {
-                        Get.offAllNamed(AppRoutes.homePage);
-                      } else {}
+                      await controller.signInWithGoogle();
                     },
                   ),
                 )

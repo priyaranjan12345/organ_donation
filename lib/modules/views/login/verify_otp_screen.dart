@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../../core/constants/app_assets_path.dart';
-import '../../core/constants/app_strings.dart';
-import '../../modules/controller/otp_screen_controller.dart';
-import '../../routes/app_routes.dart';
-import '../../theme/app_colors.dart';
-import '../../theme/app_sizes.dart';
+import '../../../core/constants/app_assets_path.dart';
+import '../../../core/constants/app_strings.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_sizes.dart';
+import '../../controller/otp_controller/otp_screen_controller.dart';
 
 class VerifyOTPScreen extends GetView<OtpScreenController> {
   const VerifyOTPScreen({Key? key}) : super(key: key);
@@ -91,7 +90,11 @@ class VerifyOTPScreen extends GetView<OtpScreenController> {
               ),
               Center(
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    String resendToken = Get.parameters['resendToke']!;
+                    String phoneNumber = Get.parameters['phoneNumber']!;
+                    controller.resendOtp(phoneNumber, int.parse(resendToken));
+                  },
                   child: const Text(
                     AppStrings.resendOtp,
                     style: TextStyle(
@@ -111,10 +114,8 @@ class VerifyOTPScreen extends GetView<OtpScreenController> {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  bool status = await controller.otpVerification();
-                  if (status) {
-                    Get.offAllNamed(AppRoutes.homePage);
-                  } else {}
+                  String verificationId = Get.parameters['verificationId']!;
+                  await controller.verifyOTP(verificationId);
                 },
                 child: const Padding(
                   padding: EdgeInsets.all(16.0),

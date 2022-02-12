@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getxfire/getxfire.dart';
-import 'package:organ_donation/routes/app_routes.dart';
+
+import '../app_routes.dart';
 
 class AppMiddleware extends GetMiddleware {
   var fireauth = GetxFire.auth;

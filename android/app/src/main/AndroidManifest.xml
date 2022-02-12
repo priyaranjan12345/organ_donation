@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.com.od.organ_donation">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="organ_donation"
         android:name="${applicationName}"

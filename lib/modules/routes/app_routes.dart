@@ -6,4 +6,6 @@ class AppRoutes {
   static const otpPage = '/otp-screen';
 
   static const homePage = '/home-screen';
+
+  static const organDonationFomrScreen = '/organ-donate-from-screen';
 }

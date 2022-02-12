@@ -1,11 +1,14 @@
 import 'package:get/get.dart';
-import 'package:organ_donation/modules/bindings/home_bindings.dart';
-import 'package:organ_donation/modules/bindings/login_bindings.dart';
-import 'package:organ_donation/modules/bindings/otp_bindings.dart';
-import 'package:organ_donation/routes/middleware/middleware.dart';
-import 'package:organ_donation/views/home/home_screen.dart';
 
+import '../bindings/home_bindings/home_bindings.dart';
+import '../bindings/login_bindings/login_bindings.dart';
+import '../bindings/organ_donate_form_bindings/organ_donate_form_bindings.dart';
+import '../bindings/otp_bindings/otp_bindings.dart';
+import '../bindings/splash_screen_bindings/splash_screen_bindings.dart';
+import '../routes/middleware/middleware.dart';
+import '../views/home/oragn_donate_form_screen.dart';
 import '../routes/app_routes.dart';
+import '../views/home/home_screen.dart';
 import '../views/login/login_screen.dart';
 import '../views/login/verify_otp_screen.dart';
 import '../views/splash/splash_screen.dart';
@@ -20,6 +23,7 @@ class AppPages {
       name: AppRoutes.splashPage,
       page: () => const SplashScreen(),
       transition: Transition.fadeIn,
+      binding: SplashScreenBindings(),
     ),
     GetPage(
       name: AppRoutes.loginPage,
@@ -40,6 +44,12 @@ class AppPages {
       transition: Transition.fadeIn,
       binding: HomeBondings(),
       middlewares: [AppMiddleware()],
+    ),
+    GetPage(
+      name: AppRoutes.organDonationFomrScreen,
+      page: () => const OrganDonateFormScreen(),
+      transition: Transition.fadeIn,
+      binding: OrganDonationFormBindings(),
     ),
   ];
 }

@@ -1,33 +1,13 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/constants/app_assets_path.dart';
-import '../../core/constants/app_strings.dart';
-import '../../routes/app_routes.dart';
-import '../../theme/app_sizes.dart';
+import '../../controller/splash_screen_controller/splash_screen_controller.dart';
+import '../../../core/constants/app_assets_path.dart';
+import '../../../core/constants/app_strings.dart';
+import '../../../core/theme/app_sizes.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends GetView<SplashScreenController> {
   const SplashScreen({Key? key}) : super(key: key);
-
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(const Duration(seconds: 2), () async {
-      Get.offAllNamed(AppRoutes.loginPage);
-    });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
