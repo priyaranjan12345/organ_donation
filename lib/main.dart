@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:organ_donation/core/theme/app_theme.dart';
 import 'package:organ_donation/modules/bindings/initial_bindings.dart';
 import 'package:organ_donation/routes/app_pages.dart';
-import 'package:organ_donation/theme/app_theme.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() async {
